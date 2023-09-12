@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação</title>
+</head>
+
+<body>
+    <header>
+        <h2>Desenvolvimento Web</h2>
+    </header>
+
+    <main>
+        <h1>Simulação de Investimento</h1>
+
+        <form action="processar.php" method="post">
+            <fieldset>
+                <legend>Dados</legend>
+
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome">
+                <br>
+
+                <label for="inicial">Aporte Inicial BRL:</label>
+                <input type="text" name="inicial" id="inicial" required>
+                <br>
+
+                <label for="mensal">Aporte Mensal BRL:</label>
+                <input type="number" name="mensal" id="mensal" required>
+                <br>
+
+                <label for="taxa_rendimento">Rendimento (%):</label>
+                <input type="number" name="rendimento" id="rendimento" required>
+                <br>
+
+                <label for="periodo">Período (Meses):</label>
+                <input type="number" name="periodo" id="periodo"required>
+                <br>
+
+                <button type="submit">Simular</button>
+            </fieldset>
+        </form>
+    </main>
+
+    <footer>
+        <p>Riquelme & Lorena - &copy; 2023</p>
+    </footer>
+</body>
+
+</html>
