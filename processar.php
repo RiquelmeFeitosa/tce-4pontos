@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Resultados da Simulação</title>
 </head>
 
@@ -15,7 +16,7 @@
     <main>
         <h1>Resultado da Simulação</h1>
 
-        <h32>Dados:</h2>
+        <h2>Dados:</h2>
 
         <?php
         require_once 'classes/autoloader.class.php';
@@ -37,11 +38,11 @@
         $aux = R::load('investimento', $i);
 
         ?>
-
+        
         <p>ID da Simulação: <?php echo isset($aux) ? $aux->id : '' ?></p>
         <p>Cliente: <?php echo isset($aux) ? $aux->nome : '' ?></p>
-        <p>Aporte Inicial (R$): <?php echo isset($aux) ? $aux->inicial : '' ?></p>
-        <p>Aporte Mensal (R$): <?php echo isset($aux) ? $aux->mensal : '' ?></p>
+        <p>Aporte Inicial BRL: <?php echo isset($aux) ? $aux->inicial : '' ?></p>
+        <p>Aporte Mensal BRL: <?php echo isset($aux) ? $aux->mensal : '' ?></p>
         <p>Rendimento (%): <?php echo isset($aux) ? $aux->rendimento : '' ?></p>
 
         <?php
@@ -59,7 +60,7 @@
 
         $valorInicial = $aporteInicial;
 
-        echo '<table border="1">';
+        echo '<table border="1" class="tabela">';
         echo '<tr><th>Mês</th><th>Valor Inicial (R$)</th><th>Aporte (R$)</th><th>Rendimento (R$)</th><th>Total (R$)</th></tr>';
 
         for ($mes = 1; $mes <= $periodo; $mes++) {
