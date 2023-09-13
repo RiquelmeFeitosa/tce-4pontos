@@ -30,7 +30,7 @@
         $i->nome = $_POST['nome'];
         $i->inicial = $_POST['inicial'];
         $i->mensal = $_POST['mensal'];
-        $i->rendimento = $_POST['taxaRendimento'];
+        $i->rendimento = $_POST['rendimento'];
         $i->periodo = $_POST['periodo'];
 
         R::store($i);
@@ -42,7 +42,7 @@
         <p>Cliente: <?php echo isset($aux) ? $aux->nome : '' ?></p>
         <p>Aporte Inicial (R$): <?php echo isset($aux) ? $aux->inicial : '' ?></p>
         <p>Aporte Mensal (R$): <?php echo isset($aux) ? $aux->mensal : '' ?></p>
-        <p>Rendimento (%): <?php echo isset($aux) ? $aux->taxaRendimento : '' ?></p>
+        <p>Rendimento (%): <?php echo isset($aux) ? $aux->rendimento : '' ?></p>
 
         <?php
         function calcularRendimento($inicial, $mensal, $taxaRendimento)
@@ -54,7 +54,7 @@
 
         $aporteInicial = $i->inicial;
         $periodo = $i->periodo;
-        $rendimentoMensal = $i->taxaRendimento;
+        $rendimentoMensal = $i->rendimento;
         $aporteMensal = $i->mensal;
 
         $valorInicial = $aporteInicial;
