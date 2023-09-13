@@ -36,7 +36,12 @@
                     ''
                 );
 
-                $i = R::load('investimento', $_GET['id']);
+                try {
+                    $i = R::load('investimento', $_GET['id']);
+                } catch (Exception $e) {
+                    echo "ID digitada é inválida.";
+                    exit; // Encerra o script para evitar a execução do restante do código
+                }
 
                     echo "<fieldset>";
                     echo "<legend>Dados</legend>";
