@@ -1,0 +1,11 @@
+    tr:nth-child(even) {
+        background-color: gray;
+        
+    }
+
+    tr:nth-child(odd) {
+        background-color: gainsboro;
+    }
+    tr:hover {
+        background-color: rgb(87, 87, 87); 
+    }
