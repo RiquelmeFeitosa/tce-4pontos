@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/549d3529d7.js" crossorigin="anonymous"></script>
     <title>Resultados da Simulação</title>
 </head>
 
@@ -16,8 +17,6 @@
     <main>
         <h1>Resultado da Simulação</h1>
 
-        <h2>Dados:</h2>
-
         <?php
         require_once 'classes/autoloader.class.php';
 
@@ -26,6 +25,8 @@
             'root',
             ''
         );
+        
+        
 
         $i = R::dispense('investimento');
         $i->nome = $_POST['nome'];
@@ -38,13 +39,16 @@
         $aux = R::load('investimento', $i);
 
         ?>
+        <fieldset>
+            <legend>Dados</legend>
+            <p>ID da Simulação: <?php echo isset($aux) ? $aux->id : '' ?></p>
+            <p>Cliente: <?php echo isset($aux) ? $aux->nome : '' ?></p>
+            <p>Aporte Inicial BRL: <?php echo isset($aux) ? $aux->inicial : '' ?></p>
+            <p>Aporte Mensal BRL: <?php echo isset($aux) ? $aux->mensal : '' ?></p>
+            <p>Rendimento (%): <?php echo isset($aux) ? $aux->rendimento : '' ?></p>
+        </fieldset>
+        <br>
         
-        <p>ID da Simulação: <?php echo isset($aux) ? $aux->id : '' ?></p>
-        <p>Cliente: <?php echo isset($aux) ? $aux->nome : '' ?></p>
-        <p>Aporte Inicial BRL: <?php echo isset($aux) ? $aux->inicial : '' ?></p>
-        <p>Aporte Mensal BRL: <?php echo isset($aux) ? $aux->mensal : '' ?></p>
-        <p>Rendimento (%): <?php echo isset($aux) ? $aux->rendimento : '' ?></p>
-
         <?php
         function calcularRendimento($inicial, $mensal, $taxaRendimento)
         {
@@ -59,7 +63,7 @@
         $aporteMensal = $i->mensal;
 
         $valorInicial = $aporteInicial;
-
+        
         echo '<table border="1" class="tabela">';
         echo '<tr><th>Mês</th><th>Valor Inicial (R$)</th><th>Aporte (R$)</th><th>Rendimento (R$)</th><th>Total (R$)</th></tr>';
 
@@ -88,6 +92,7 @@
         }
         echo '</table>';
         ?>
+        <p><i class="fa-solid fa-house"></i> <a href="index.html">Página Inicial</a></p>
     </main>
 
     <footer>
