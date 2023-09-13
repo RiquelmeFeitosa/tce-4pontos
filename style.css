@@ -1,11 +1,30 @@
-    tr:nth-child(even) {
-        background-color: gray;
-        
-    }
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
 
-    tr:nth-child(odd) {
-        background-color: gainsboro;
-    }
-    tr:hover {
-        background-color: rgb(87, 87, 87); 
-    }
+body {
+    font-family: 'Jost', sans-serif;
+}
+
+tr:nth-child(even) {
+    background-color: gray;
+}
+
+tr:nth-child(odd) {
+    background-color: gainsboro;
+}
+
+tr:hover {
+    background-color: rgb(87, 87, 87);
+}
+
+#parteinicial {
+    margin-left: 20px;
+}
+
+.dados {
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
