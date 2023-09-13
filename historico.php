@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/549d3529d7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>Simulador de Investimentos</title>
 </head>
@@ -44,8 +45,8 @@
     
                         echo "<p>ID da Simulação: {$i->id}</p>";
                         echo "<p>Cliente: {$i->nome}</p>";
-                        echo "<p>Aporte Inicial (R$): {$i->inicial}</p>";
-                        echo "<p>Aporte Mensal (R$): {$i->mensal}</p>";
+                        echo "<p>Aporte Inicial BRL: {$i->inicial}</p>";
+                        echo "<p>Aporte Mensal BRL: {$i->mensal}</p>";
                         echo "<p>Rendimento (%): {$i->rendimento}</p>";
                         echo "<p>Período (meses): {$i->periodo}</p>";
     
@@ -109,7 +110,7 @@
         </form>
 
 
-        <p><a href="index.html">Página Inicial</a></p>
+        <p><i class="fa-solid fa-house"></i> <a href="index.html">Página Inicial</a></p>
     </body>
 
     <footer>
